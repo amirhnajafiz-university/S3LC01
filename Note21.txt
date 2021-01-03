@@ -1,0 +1,22 @@
+﻿ROM :
+read only memory
+
+Can be used :
+	- to implement any arbitrary combinational circuit as a memory
+Consists of :
+	- an n-to-2^n decoder that produces ALL minterms a set of programmable OR gates that produce SoP’s
+	- Is usually described in terms of :
+		- size of its decoder output (number of memory rows)
+		- number of OR gates (memory width)
+
+Memories : 
+	Volatile :
+		Random Access Memory (RAM) :
+		− SRAM: "static"
+		− DRAM: "dynamic"
+	Non-Volatile :
+		- ROM
+		- PROM
+		- EPROM
+		- EEPROM
+		- FLASH memory: similar to EEPROM with programmer integrated on chip

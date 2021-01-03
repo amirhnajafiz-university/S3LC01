@@ -1,0 +1,40 @@
+Hazard :
+we knew that delays in circuits might cause glitchs.
+
+Each circuit that has the possibility to have a glitch init, contains a hazard.
+
+Two types : 
+	1. Static 
+	2. Dynamic
+
+
+Static Hazard :
+
+Informal Definition:
+A static-1 hazard is the possibility of a 0 glitch when we expect the output to remain at a nice steady 1 based on a static analysis.
+Formal Definition:
+A static-1 hazard is a pair of input combinations that:
+	(a) differ in only one input variable and
+	(b) both give a 1 output such that it is possible for a momentary 0 output to occur during a transition in the differing input variable.
+
+A static-0 hazard is just the dual of a static-1 hazard.
+A properly designed two-level sumof-products (AND-OR) circuit can have no static-0 hazards.
+An POS / OR-AND circuit that is the dual of the example circuit could potentially have a static-0 hazard.
+
+Note >> POS static-0 / SOP static-1
+
+
+How to find hazard possibility inside a circuit ?
+	- From circuit : if these is at least more than one seperate pathes from an input to output that are not same in delays, then we might have hazard.
+	- In karnaugh map : if two 1 states where next to each other in map, that were not coverd by a same group, then we have hazard.
+
+Note >> we sure have a glitch in one of the pathes in the circuit, but we cannot say which path generates the glitch.
+
+To avoid this hazard thing, we need to use a third party thing, which covers the 1s in karnaugh map together. ( increases costs, decreases pules )
+
+
+Dynamic Hazard :
+The possibility of an output changing more than once as the result of a single input transition.
+Multiple output transitions can occur if there are multiple paths with different delays from the changing input to the changing output.
+
+>> two path = static / more than 2 = dynamic / no path = no hazard

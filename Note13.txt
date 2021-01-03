@@ -1,0 +1,107 @@
+﻿Sequential Circuits:
+
+Combinational Logic:
+	>> Output depends only on current input
+		− TV channel selector (0-9)
+Sequential Logic:
+	>> Output depends not only on current input but also on current state of the system (which depends on past input values)
+		− TV channel selector (up-down)
+	>> Need some type of memory to remember the current state
+
+Sequential logic circuits
+	>> Remembers past inputs and past circuit state
+	>> Outputs from the system can be “fed back” as new inputs	
+	>> The storage elements are circuits that are capable of storing binary information: memory
+
+
+Feedback loop:
+A signal s1 depends on another signal whose value depends on s1
+	− There can be several intermediate signals
+
+Base of the memory is the feedback loops where it can hold , set or reset the input.
+the feedback line can keep one of two values 0 or 1.
+A circuit with n feedback lines has 2^n potential states, and that the memory of our circuit depends on the number of its feedback lines.
+
+
+
+Types of feedback loops:
+
+SR Latch ( NOR version )
+	it contains from two nors that each output is one input of other nor.
+	we have two inputs S and R with output Q.
+>> based on the R and S and Q we give Q(t+) which is new statement in our loop
+
+S  R  |  Q
+0  0   |  hold
+0  1   |  0
+1  0   |  1
+1  1   | unstable ( cause it gets into race and will create a AC signul between 0 and 1 )
+
+holds => means it will give the result of Q(t) as Q(t+)
+if it gives zero => it will reset
+if it gives 1 => it will set 
+
+Note >> for making the karnugh map of this circuit you should use Q as input parameter too, cause we have sequintial circuit.
+
+The situcation R=S=1 is not allowed because:
+	> When S=R=1, both outputs go to zero
+	>> If both inputs now go to 0, the state of the SR latch depends on delays
+	> Hence, “undefined” state
+		− MUST be avoided
+
+
+S`R` Latch ( NAND version )
+this is the same as SR latch but with nand gate and new results.
+
+S`  R`  |  Q
+0    0    |  not allowed
+0    1    |  1 ( set )
+1    0    |  0 ( reset )
+1    1    |  hold
+
+
+To avoid the 1 1 statement which is not allowed , we use a controller.
+this controller uses two nand gates with a c that gives us this :
+
+S   R   C   |  S’   R’  |  Q  Q’
+0   0    1       1    1      Q0 Q0’  (Hold)
+0   1    1       0    0       0    1     (Reset)
+1   0    1       0    1       1    0     (Set)
+1   1    1       0    0       1    1     (Not allowed)
+X  X   0       1    1      Q0 Q0`  (Hold)
+
+to have a memory circuit we should put out two rows. The first one and the not allowed one.
+so we define a new input called D and we set D to S and D` to R.
+now in this circuit we won't get any not allowes and the results will be like:
+
+C  D   |   Next state of Q
+0   x    |   No change
+1   0    |   Q = 0; reset state
+1   1    |   Q = 1; set state
+
+This circuit is called   << D Latch >>  ( data latch ) which stores the statements results init.
+
+> SR latches are useful in control applications,
+	− where we often think in terms of setting a flag in response to some condition, and resetting it when conditions change
+> We often need latches simply to store bits presented on a signal line
+>> D latch (i.e., Data latch)
+> Can eliminate the undesirable indeterminate state in the SR latch:
+	− ensures that inputs S and R are never simultaneously 1
+
+
+JK Latch :
+we have two inputs J and K, and its different from D Latch.
+
+Results :
+J(t) K(t) Q(t) Q(t+) 
+ 0     0      0      0 (hold)
+ 0     0      1      1 (hold)
+ 0     1      0      0 (reset)
+ 0     1      1      0 (reset)
+ 1     0      0      1 (set)
+ 1     0      1      1 (set)
+ 1     1      0      1 (toggle)
+ 1     1      1      0 (toggle)
+
+just like the SR latch in here toggle correctness condition: single state changes, it wil create a race like we said before
+	>> Solution: Master/Slave flip-flop

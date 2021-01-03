@@ -1,0 +1,36 @@
+Karnaugh Map:
+
+Method of graphically representing
+the truth table that helps visualize
+adjacencies.
+
+Everything in a karnaugh map is also in truth table.
+Each house is next to other house if their codes have different in only 1 bite.
+	Corners can also be next to each other.
+
+- One cell = a minterm (or a maxterm)
+- Multiple-cell areas = standard terms
+
+
+Don't Cares can be treated as 1's or 0's, whichever is more advantageous.
+In map just put X in place of them.
+We can put 1 or 0 for don't cares in a way that we want and makes our circuit
+simpler.
+
+Defenitions :
+	Implicant:	single element of the ON-set or any group of elements that
+		can be combined together in a K-map (= adjacency plane)
+	Prime Implicant (PI): implicant (a circled set of 1-cells) satisfying the combining
+		          rule, such that if we try to make it larger (covering twice as
+                                            many cells), it covers one or more 0s.
+	Distinguished 1-cell: an input combination that is covered by only one PI.
+	Essential Prime Implicant (EPI): a PI that covers one or more distinguished 1-cells.
+
+How to get function from table => Minimum cover =
+				First: cover EPIs
+				Then: minimum number of PIs
+
+5-Variable K-Map
+To create them we use two 4 K-maps with different values for the 5th variable.
+>> This is like a 3D cube so the next houses can be from different maps.
+Same 6-Var K-maps are the same as 5 ones.
