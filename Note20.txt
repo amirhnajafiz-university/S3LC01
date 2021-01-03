@@ -1,0 +1,10 @@
+PAL & PLA :
+programming logic array => - Pre-fabricated building block of many AND/OR gates (or NOR, NAND)
+		          - General purpose logic building blocks
+		          - “Personalized” or “customized” by making/breaking connections among the gates.
+		          - This process is called "programming"
+
+In plas we can program a circuit by changing the status of "programable connections".
+
+programming array logic => Same as pla but with a less cost, because of existance of constant circuits in some parts of the pla.
+

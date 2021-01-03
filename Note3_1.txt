@@ -1,0 +1,23 @@
+Implemention by NAND gates only:
+- Universal gate
+- Can replace gates by equivalent NAND circuit.
+
+Demorgan law :
+	 (a + b)’ = a’ b’        (a b)’ = a’ + b’
+	 a + b = (a’ b’)’       (a b) = (a’ + b’)’
+
+Implements:
+	NAND 
+		 (a . a)’ = a’
+	NOR
+		(a + a)’ = a’
+
+Finding NAND-only Implementation:
+	1st step: Find Sum-of Product form
+	2nd step: Add double inverters
+	3rd step: Identify equivalent NANDs
+
+NOR-Only Implementation:
+	1st step: Find Product-of Sums form
+	2nd step: Add double inverters
+	3rd step: Identify equivalent NORs

@@ -1,0 +1,13 @@
+Delays
+Circuits in real world have delays. We can avoid them cause of :
+				1- Simplfy
+				2- Static analysis not dynamic.
+In real world we have two kind of delays:
+	1- Tphl => delay in changing from high to low ( 1 => 0 ) 
+	2- Tplh => delay in changing from low to high ( 0 => 1 )
+	And the Tpd which is the total delay in circuit is max(Tphl, Tplh).
+	50% of high and 50% of low is our time limit in both Ts.
+This delays can happen between any two elements in a circuit.
+This changes the diagram and the results of a function.
+
+==> This unwanted delays make some pales called "glitch".

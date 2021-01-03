@@ -1,0 +1,73 @@
+Flip-Flops:
+Latches are “transparent” (= any change on the inputs is seen at the outputs after some delay)
+This may cause synchronization problems!
+Solution: use latches to create flipflops that can respond (update) ONLY on SPECIFIC times (instead of ANY time)
+
+D-FF type:
+the most common type of FF 
+>> Timing for D Flip-Flop (Falling-Edge Trigger)
+
+Truth table:
+D Q  |  Q*
+0  0   |   0
+0  1   |   0
+1  0   |   1
+1  1   |   1
+
+In flip-flop we use a Ck that is an AC signal that goes between 0 and 1. On the edges of zero it will set the Q as the value of D. ( Only in that time )
+and the rest of the time it remains the same.
+>> the diffrences in FF and JK shapes are in one tiny triangle in Ck input gate
+
+In symbols the small triangles in the symbol show that it is a FF not a latch.
+The small bubbles show the positive or negative edge => have bubble then its a negative edge triggered
+
+
+How to make D-FF ?
+By connecting two latches , and set clock to right latch and clock prime to left latch. ( this is rising edge )
+> To create a falling-edge just change the clock and clock prime places for G in latches.
+
+
+Some defenitions :
+Setup time:
+	D input must be stable for a certain amount of time BEFORE the
+	active edge of clock.
+Hold time:
+	D input must be stable for a certain amount of time AFTER the
+	active edge of the clock.
+Propagation Delay (Clock-to-Output):
+	From the time the clock changes to the time the output changes.
+Propagation Delay (Data-to-Output):
+	From the time the data changes to the time the output changes
+	Mainly defined for latches.
+
+Master-Slave FF configuration using SR latches:
+by using two SR latches we can create a FF. Just the controllers are connected to C and C` each.
+When C=1, master is enabled and stores new data, slave stores old data.
+When C=0, master’s state passes to enabled slave (Q=Y), master not sensitive to new data (disabled).
+
+
+Master-Slave JK flip flop :
+by using two jk latches and two and gates we can build a jk flip flop.
+Master samples inputs while clock high. Slave samples inputs while clock low.
+
+> Correct toggle operation but catches J or K glitches! this will create some pules that effect our output.
+
+Problem with a Master-Slave FF:
+	- a 0-1-0 glitch on the J or K inputs leads to a state change!
+	Solution: edge-triggered logic
+Edge-Triggered FF: ( also called T Flip-Flop )
+Q+ = T xor Q
+T = 0 >> hold  /  T = 1 >> toggled
+
+
+Asynchronous Preset/Clear
+
+Many times it is desirable to asynchronously (i.e., independent of the clock) set or reset FFs.
+> Example: At power-up so that we can start from a known state
+>> Asynchronous set == direct set == Preset
+>> Asynchronous reset == direct reset == Clear
+>> There may be “synchronous” preset and clear
+
+Note >> This circuits are high value cause they use direct setting or resetting
+
+Using synchronous inputs make the circuit less value and it is not direct and takes some time for inputs to effect the output. ( related to clock )

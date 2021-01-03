@@ -1,0 +1,38 @@
+Registers and Counters
+
+> An n-bit register = n flip-flops arranged to work together.
+> Capable of storing n bits of binary information.
+
+If we want to manage the registration we use a load control input.
+this allows us to decide whenever to make a clock so the data will update.
+
+Due to some problems in clocking we can create this circuit with a w/o clock gating.
+
+
+Shift Register
+a serial transfer of information from register A to register B.
+moves the data to next register.
+
+Serial addition using shift registers:
+The two binary numbers to be added serially are stored in two shift registers.
+The sum bit on the S output of the full adder is transferred into the result register A.
+
+
+Serial addition => uses 1 full adder / very slower than parallel
+Parallel addition => uses n full adders / faster
+
+Load control allows us to add new data or keep the data we had.
+Shift register with parallel load :
+using a shift register that has n bits for loading to happen.
+	Shift Load Operation
+	0       0       Nothing
+	0       1       Load parallel
+	1       X      Shift Q0 => Q1, Q1 => Q2
+
+Bidirectional shift register :
+same as normal shift register , but with the ability to shift back too.
+	S1S0	Action
+	00	Nothing
+	01	Shift down
+	10	Shift up
+	11	Parallel load

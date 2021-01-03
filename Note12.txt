@@ -1,0 +1,65 @@
+﻿Verilog continue:
+
+Hierarchical Design => means to create a circuit step by step from basic
+
+Dataflow description => uses some operators and signal assignments , to avoid building a circuit from base
+Ex : + for sum / - for sub / | for or / & for and / {} for vectoring / ?: for conditions
+
+Ex : a decoder built with dataflow
+	module decoder_df (A,B,E,D);
+		input A,B,E;
+		output [0:3] D;
+		assign 	D[0] = ~(~A & ~B & ~E),
+			D[1] = ~(~A & B & ~E),
+			D[2] = ~(A & ~B & ~E),
+			D[3] = ~(A & B & ~E);
+	endmodule
+
+Ex: mux creating with dataflow
+	1. assign Y = (A & S) | (B & ~S);
+	2. 	module mux2x1_df (A,B,select,OUT);
+			input A,B,select;
+			output OUT;
+			assign OUT = select ? A : B;
+		endmodule
+
+Behavioral modeling :
+its a light wight version of the model we want to build, to check the correctness and the usage of our circuit.
+the difference with normal model is that it is simple with low details and uses some methods to check the behavior of circuit model.
+
+Behavioral modeling is alwyas watching the inputs and outputs and will make the changes when the arguments change their value.
+
+The key work is always @ with expression init
+>> this will give the new updates based on the expression give in always @
+>> output must be a reg, cause it gets more than one outputs
+
+Note >> you can use switch cases , loops , or if else statements in expression
+
+If “always” used for combinational circuits, then:
+	1. All input variables must be used in the sensitivity list ==>> always @ ( i0 or i1 or ... )
+	2. For all combinations of the input, the output has to be specified
+
+Testbench :
+>> Applies inputs and is used to see the outputs
+>> Uses initial to drive the values
+	− runs once
+>> always runs many times
+
+we can use loops in our testbench by << repeat(number) >>
+
+> You can see waveforms
+> Values can be displayed by Verilog system tasks:
+	− $display: displays variable value once (with newline)
+		− $display (format, argument list);
+	− $write: as $display without newline
+	− $monitor: displays any variable that is changed during simulation
+	− $time: shows simulation time
+	− $finish: finishes the simulation
+
+Tb formats:
+	> $monitor("select = %b A = %b B = %b OUT = %b time = %0d",
+		TS, TA, TB, Y, $time);
+	> %0d is better for time because %d reserves 10 positions
+	> inputs: reg
+	> output: wire
+

@@ -1,0 +1,32 @@
+Counters:
+A counter is a sequential circuit that goes through a predetermined sequence of states upon the application of clock pulses.
+>> Doesn't need to be in a normal order, it just needs to have a loop
+
+Two types:
+1. Synchronous Counters: All FFs receive a common clock pulse, and the change of state is determined from the present state.
+2. Ripple Counters: One FF output transition serves as a source for triggering other FFs. No common clock.
+
+Synchronous Binary Counters
+> The design procedure for a binary counter is the same as any other synchronous sequential circuit.
+> Most efficient implementations usually use T-FFs or JK-FFs. We will examine JK and D flip-flop designs.
+
+Usually it has an enable too , when 0 counter remains in the same state, when 1, it counts.
+
+Counters with Parallel Load
+Design a path for input data
+	> enabled if Load = 1
+Design some logic to:
+	> disable count logic when Load = 1
+	> disable feedback from outputs when Load = 1
+	> hold the stored value when Load = 0 and Count = 0
+	> enable count logic when Load = 0 and Count = 1
+The resulting function table:
+	Load	Count	Action
+	0 	0 	Hold Stored Value
+	0 	1 	Count Up Stored Value
+	1 	X 	Load D
+
+
+Ripple counter concept:
+Not all the clocks are connected to the main clock.
+For each clock we need to have n delays so the n bit changes.

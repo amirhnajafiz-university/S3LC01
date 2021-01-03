@@ -1,0 +1,26 @@
+State Diagram :
+The sequential circuit function can be represented in graphical form as a state diagram with the following components:
+	> A circle with the state name in it for each state
+	> A directed arc from the Present State to the Next State for each state transition
+	> A label on each directed arc with the Input values which causes the state transition, and
+	> A label :
+		- In each circle with the output value produced (Moore), or
+		- On each directed arc with the output value produced (Mealy)
+
+Label form:
+In circle (for Moore machines):
+	> state/output
+	> Moore type output depends only on state
+On directed arc (for Mealy machines):
+	> input/output
+	> Mealy type output depends on state and input
+
+If we want the state table for jk flip-flop : 
+	1. Obtain binary values of each FF input equation in terms of present state and input variables.
+	2. Use corresponding FF characteristic table to determine the next state.
+
+Note >> in moore circuits there is at least one path from input to output that does not have any flipflops init.
+
+Note >> sometimes circuits can have no nonrelative inputs, thus they are moore machines.
+In these circuits we often go through situations in a loop.
+

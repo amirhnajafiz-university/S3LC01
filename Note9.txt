@@ -1,0 +1,12 @@
+Verilog :
+The and , or gates in verilog act with some rules => check pdf 10
+
+In verilog lang , we can create vector insted of signals.
+	Ex: output [0:3] D;
+	      wire [7:0] SUM;
+And we can use indexing to them and slicing them.
+
+Verilog also have the keys bufif1 and notif0,
+which are tri-state buffers and inverters.
+
+Also to give an output to multi gates, you can define a 'tri' output which will let you to connect more than one outputs to it.

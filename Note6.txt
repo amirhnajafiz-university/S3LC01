@@ -1,0 +1,39 @@
+Multiplexer - MUX:
+
+Multiplexer (Selector) 
+- 2^n data inputs
+- n control inputs 
+- 1 output 
+- Described as 2n:1 
+Is used to connect only one of 2^n inputs to a single output at a given time.
+The control signal pattern forms the binary index of the input connected to the output.
+Called “MUX” for brevity.
+
+Basically the mux is just a selector that works by its controllers.
+
+Large muxes have the design to be impliment by smaller muxes.
+
+
+To chose multi signals we use multimuxes.
+The diagram is just like muxes, but the connections are in a way that multi signals are choosed for 
+the results.
+
+Adder is what the gate named for this operation.
+
+The multimux is like this:
+	----------------	----------------
+  input =	| x1 x2 x3 x4 |	| y1 y2 y3 y4 |
+	----------------	----------------
+		       mux
+		----------------
+	 output =	| z1 z2 z3 z4 |
+		----------------
+	So the output is neither x1..x4 or y1..y4
+
+General Logic by MUX:
+Any Boolean function of n variables can be implemented using a 2^n-1:1 multiplexer.
+- n-1 inputs go to the control lines directly
+- One input is used to appropriately determine the output
+
+>> The choice of the singled-out input doesn’t change the functionality but it affects the complexity.
+>> MUXes can only implement single-output functions.

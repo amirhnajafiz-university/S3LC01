@@ -1,0 +1,59 @@
+Sequential Circuit Analysis
+
+Synchronous sequential circuit:
+> Its behavior can be determined knowing its input signals at discrete instants of time.
+> Achieves synchronization among components by using a timing signal called the clock:
+	- Its outputs change synchronized with the clock
+Asynchronous sequential circuit:
+> Its behavior depends on the order of input signals changes over a continuous time
+> There is no need for synchronization:
+	- No clock signal
+	- Its outputs can change at any time
+
+Clock Signal :
+> Clock is distributed throughout the entire design
+> Each component synchronizes itself with it
+
+
+Analysis:
+> Obtaining a suitable description that demonstrates the time sequence of inputs, outputs, and states.
+
+To analize a sequential circuit we need to first find each statement based on 't-1' and then find the 't' statements.
+
+
+State table
+A multiple variable table with the following four sections:
+> Present State
+	- The values of the state variables for each allowed state
+> Input
+	- The input combinations allowed
+> Next-state
+	- The value of the state at time (t+1) based on the present state and the input
+> Output
+	- The value of the output as a function of the present state and (sometimes) the input
+
+State Table Characteristics :
+	From the viewpoint of a truth table :
+		> The inputs: Input, Present State
+		> The outputs: Output, Next State
+	> The state table can be filled in using the next state and output equations
+
+General format of sequential circuit is based on a combinational circuit with a storage element ( FF ).
+There are two types :
+	Outputs depend on present state and inputs (Mealy machine)
+	Outputs depend on present state only (Moore machine)
+The difference between these two circuits is in the place of logic for output in the circuits.
+
+
+Mealy vs. Moore Machines
+Mealy model:
+	> Both outputs and next state depend on primary inputs AND present state
+	> Out = f(inputs, state)
+	> Top diagram in the previous slide
+	> Mealy machines react faster to inputs
+Moore model:
+	> Only next state depends directly on primary inputs AND present state. Outputs depend only on present state
+	> Out = f(state)
+	> Bottom diagram in the previous slide
+	> Moore machines are easier and safer to use
+
