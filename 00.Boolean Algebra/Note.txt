@@ -43,19 +43,10 @@ Consensus Theorem
 	1. xy + x’z + yz = xy + x’z
 	2. (x+y)•(x’+z)•(y+z) = (x+y)•(x’+z) (dual)
 
-
-
-
-Product of sum => Change the function into some form that all the literals are 1- single
-							2- only sums are acceptable between and product between two multi sentenses
-	Ex: (A + B) ( B + C + D ) is product of sum
-	      (AB + C) (C + D) is not cause of AB
-
-Sum of product => Change the function into some form that all the literals are 1- single
-							 2- only product between them
-	Ex: AB + CD + BCDE is sum of product
-	      (A + B)C + BC is not couse of (A+B)
-
-A useful theorem for multiplying out: (X + Y)(X '+  Z) = XZ + X'Y
-Theorem for factoring: AB + A`C = (A + C)(A` + B)
-
+Theorems for XOR
+	X NOR 0 = X
+	X NOR 1= X '
+	X NOR X = 0
+	X NOR X ' = 1
+	X NOR Y = Y NOR X (commutative law)
+	X NOR Y = XY' + X'Y
