@@ -42,11 +42,3 @@ Absorption Property
 Consensus Theorem
 	1. xy + x’z + yz = xy + x’z
 	2. (x+y)•(x’+z)•(y+z) = (x+y)•(x’+z) (dual)
-
-Theorems for XOR
-	X NOR 0 = X
-	X NOR 1= X '
-	X NOR X = 0
-	X NOR X ' = 1
-	X NOR Y = Y NOR X (commutative law)
-	X NOR Y = XY' + X'Y
