@@ -1,0 +1,13 @@
+Logic gates :
+
+Logic gates are abstractions of electronic circuit components that operate on 
+one or more input signals to produce an output signal.
+
+
+Theorems for XOR
+	X NOR 0 = X
+	X NOR 1= X '
+	X NOR X = 0
+	X NOR X ' = 1
+	X NOR Y = Y NOR X (commutative law)
+	X NOR Y = XY' + X'Y

@@ -32,12 +32,3 @@ To convert standard form to minterm canonical we product (a+a`) to the sentences
 the literals they need.
 And for maxterm canonicals we use (aa`) in their sentences.
 ==> in above forms we use dirstractive laws to expand the function.
-
-
-Theorems for XOR
-	X NOR 0 = X
-	X NOR 1= X '
-	X NOR X = 0
-	X NOR X ' = 1
-	X NOR Y = Y NOR X (commutative law)
-	X NOR Y = XY' + X'Y
