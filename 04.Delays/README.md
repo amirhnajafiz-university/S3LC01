@@ -1,0 +1,40 @@
+# Delay in Logic Circuits
+
+<pre>
+Circuits in real world have delays. We can avoid them cause of :
+				1- Simplfy
+				2- Static analysis not dynamic.
+In real world we have two kind of delays:
+	1- Tphl => delay in changing from high to low ( 1 => 0 ) 
+	2- Tplh => delay in changing from low to high ( 0 => 1 )
+	And the Tpd which is the total delay in circuit is max(Tphl, Tplh).
+	50% of high and 50% of low is our time limit in both Ts.
+This delays can happen between any two elements in a circuit.
+This changes the diagram and the results of a function.
+
+==> This unwanted delays make some pales called "glitch".
+</pre>
+
+## Full defenition
+<pre>
+Electronic signals travel along conductors at about 8cm per nanosecond (the actual speed depends on the conductor material, dimensions, and other external factors). 
+Electronic switches, like the field-effect transistors (FETs) used in logic circuits, typically require up to several hundred picoseconds to turn on and off. 
+When a switch does turn on, it must transfer charge to or from the capacitance at its output node, and again, this takes time. 
+All of these factors contribute to the simple fact that time is required for electric signals to propagate through logic circuits. 
+Restated, time is required to process information in digital circuits.
+This processing time is divided between the less significant signal transmission time, and the more significant propagation delays associated with switching logic circuits. 
+If not managed properly, 
+propagation delays can result in logic circuits that run too slowly to meet their requirements, or that fail altogether.
+
+A simple logic circuit, its equivalent CMOS circuit, and a timing diagram are shown below in Fig. 
+1 with a particular intra-gate node (N1) highlighted. 
+The timing diagram illustrates logical behavior of signals as a function of time. Note that if B changes from low to high when C is high as shown, 
+the circuit node N1 changes from high to low after a time τ1 has elapsed. The time τ1 is the “propagation delay” associated with the NAND gate. 
+Referring to the CMOS circuit, the propagation delay τ1 models transistor Q1 turning on and discharging node N1 from Vdd to GND. 
+Although there is no actual capacitor at the output node, all of the signal wires and FET connections associated with the circuit node N1 behave like a single capacitor, 
+and this “parasitic” accumulated capacitance is shown lumped into a single component labeled C1. As is the case with any capacitor, 
+C1 cannot transition from Vdd to GND immediately; the propagation delay τ1 models the time required to discharge this capacitance. 
+</pre>
+
+### Example
+<img src="https://github.com/amirhnajafiz/LogicCircuitsForLearn/blob/main/04.Delays/Tools/Ex.png" />
