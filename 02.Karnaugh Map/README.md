@@ -39,5 +39,11 @@ Same 6-Var K-maps are the same as 5 ones.
 </pre>
 
 ## Examples
+1.<br />
 <img src="https://github.com/amirhnajafiz/LogicCircuitsForLearn/blob/main/02.Karnaugh%20Map/Tools/ex1.png" width=500 /><br />
+2.<br />
 <img src="https://github.com/amirhnajafiz/LogicCircuitsForLearn/blob/main/02.Karnaugh%20Map/Tools/ex2.png" width=500 /><br />
+3.<br />
+<img src="https://github.com/amirhnajafiz/LogicCircuitsForLearn/blob/main/02.Karnaugh%20Map/Tools/ex3.jpg" width=500 /><br />
+4.<br />
+<img src="https://github.com/amirhnajafiz/LogicCircuitsForLearn/blob/main/02.Karnaugh%20Map/Tools/ex4.png" width=500 /><br />
