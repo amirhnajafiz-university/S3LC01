@@ -92,8 +92,7 @@ An ex of priority encoder is our system cpu which decides what operations should
 <img src="https://github.com/amirhnajafiz/LogicCircuitsForLearn/blob/main/05.Building%20Blocks%20(%20Verilog%20)/Tools/Def3.png" />
 
 ### Example
-<pre>
-Example:  
+```verilog  
    Module gate() 
    Wire ot0; 
    Wire ot1; 
@@ -103,13 +102,34 @@ Example:
    Not U1(ot0,in0); 
    Xor U2(ot1,in1,in2,in3); 
    And U3(ot2, in2,in3,in0) 
-
-Example:  
+   endmodule
+  
    Module gate() 
    Wire out0; 
    Wire out1; 
    
    Reg in0,in1;
    Not U1(out0,in0); 
-   Buf U2(out0,in0); 
-</pre>
+   Buf U2(out0,in0);
+   endmodule
+```
+
+```verilog
+   Wirec // simple wire 
+   Wand d; 
+   
+   Assign d = a; // value of d is the logical AND of 
+   Assign d = b; // a and b 
+   Wire [9:0] A; // a cable (vector) of 10 wires. 
+   
+   Wand [msb:lsb] wand_variable_list; 
+   Wor [msb:lsb] wor_variable_list; 
+   Tri [msb:lsb] tri_variable_list; 
+
+Module sample(a, c, b, d);  
+Input c;   // An input where wire is used. 
+
+Output a, b;  // Two outputs where wire is used. 
+Output [2:0] d;  /* A three-bit output. One must declare type in a separate statement. */ 
+reg [1:0] a;  // The above ‘a’ port is for declaration in reg.
+```
