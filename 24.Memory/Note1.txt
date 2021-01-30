@@ -1,0 +1,17 @@
+The memory cell is the fundamental building block of computer memory.
+The memory cell is an electronic circuit that stores one bit of binary information and it must be set to store a logic 1 (high voltage level) and reset to store a logic 0 (low voltage level). 
+Its value is maintained/stored until it is changed by the set/reset process. 
+The value in the memory cell can be accessed by reading it.
+
+Over the history of computing, different memory cell architectures have been used, including core memory and bubble memory. 
+Today, the most common memory cell architecture is MOS memory, which consists of metal–oxide–semiconductor (MOS) memory cells. 
+Modern random-access memory (RAM) uses MOS field-effect transistors (MOSFETs) as flip-flops, along with MOS capacitors for certain types of RAM.
+
+The SRAM (static RAM) memory cell is a type of flip-flop circuit, typically implemented using MOSFETs. 
+These require very low power to keep the stored value when not being accessed. A second type, DRAM (dynamic RAM), is based around MOS capacitors. 
+Charging and discharging a capacitor can store a '1' or a '0' in the cell. However, the charge in this capacitor will slowly leak away, and must be refreshed periodically. 
+Because of this refresh process, DRAM uses more power. However, DRAM can achieve greater storage densities.
+
+On the other hand, most non-volatile memory (NVM) is based on floating-gate memory cell architectures. 
+Non-volatile memory technologies including EPROM, EEPROM and flash memory use floating-gate memory cells, 
+which are based around floating-gate MOSFET transistors. 
